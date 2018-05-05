@@ -10,3 +10,6 @@ roles/vendors/*
 # Ignore generic files
 *.pyc
 
+playbooks/2_target_requirements.retry
+playbooks/5_gitlab_runner.retry
+playbooks/999_main_playbook.retry
