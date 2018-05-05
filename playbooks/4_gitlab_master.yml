@@ -1,10 +1,11 @@
-
+---
 #
 # Install Gitlab and Gitlab Runner
 
 - hosts: masters
   user: ubuntu
   become: yes
+  vars_files:
+    - vars/gitlab_master.yml
   roles:
-  - gitlab
-
+    - gitlab

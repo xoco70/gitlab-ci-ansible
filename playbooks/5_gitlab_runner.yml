@@ -1,0 +1,9 @@
+---
+
+- hosts: runners
+  user: ubuntu
+  become: yes
+  vars_files:
+    - vars/gitlab_runner.yml
+  roles:
+    - role: gitlab-runner

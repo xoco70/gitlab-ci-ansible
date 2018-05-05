@@ -4,3 +4,6 @@
   version: 2.5.0
   name: gitlab
 
+- src: riemers.gitlab-runner
+  name: gitlab-runner
+

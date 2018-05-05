@@ -1,0 +1,6 @@
+gitlab_runner_coordinator_url: 'http://13.59.75.180'
+gitlab_runner_registration_token: 'DekHiFwyDYPqi-HnX7xZ'
+gitlab_runner_description: 'Example GitLab Runner'
+gitlab_runner_docker_volumes:
+  - "/var/run/docker.sock:/var/run/docker.sock"
+  - "/cache"
