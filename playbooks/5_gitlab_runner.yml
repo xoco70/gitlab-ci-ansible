@@ -7,3 +7,6 @@
     - vars/gitlab_runner.yml
   roles:
     - role: gitlab-runner
+  tasks:
+    - name: Add gitlab-runner user to docker group
+      shell: usermod -aG docker gitlab-runner
