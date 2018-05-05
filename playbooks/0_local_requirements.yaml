@@ -18,9 +18,6 @@
     installation_prefix: ../
 
   tasks:
-#    - name: Get current working path
-#      command: pwd
-
     - name: Remove existing vendor roles
       file:
         path: "{{ installation_prefix }}{{ installation_dir }}"
