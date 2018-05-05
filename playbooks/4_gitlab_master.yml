@@ -1,6 +1,10 @@
----
+
 #
 # Install Gitlab and Gitlab Runner
+# TODO
+# - create user with gitlab_user
+# - create project with gitlab_project
+# - get project token and pass it to runner
 
 - hosts: masters
   user: ubuntu
@@ -9,3 +13,11 @@
     - vars/gitlab_master.yml
   roles:
     - gitlab
+
+- hosts: runners
+  user: ubuntu
+  become: yes
+  vars_files:
+    - vars/gitlab_runner.yml
+  roles:
+    - role: gitlab-runner
