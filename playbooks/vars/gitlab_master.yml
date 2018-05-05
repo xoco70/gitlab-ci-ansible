@@ -1,2 +1,3 @@
 gitlab_external_url: "http://18.188.159.187"
-ansible_python_interpreter: /usr/bin/python3
+pip_install_packages:
+  - name: pyapi-gitlab
