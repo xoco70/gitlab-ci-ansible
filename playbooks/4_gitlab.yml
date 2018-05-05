@@ -1,0 +1,10 @@
+
+#
+# Install Gitlab and Gitlab Runner
+
+- hosts: masters
+  user: ubuntu
+  become: yes
+  roles:
+  - gitlab
+

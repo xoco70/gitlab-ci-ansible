@@ -1,9 +1,6 @@
 ---
 
-# TODO: Do a better documentation
-# Doc: http://docs.ansible.com/ansible/galaxy.html#id8
-
-- src: mrjk.dumpall
-  version: dev
-  name: dumpall
+- src: geerlingguy.gitlab
+  version: 2.5.0
+  name: gitlab
 
