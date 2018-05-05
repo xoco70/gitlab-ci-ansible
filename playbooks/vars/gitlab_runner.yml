@@ -1,4 +1,5 @@
-gitlab_runner_coordinator_url: '<mandatory>'
+ansible_python_interpreter: /usr/bin/python3
+gitlab_runner_coordinator_url: 'http://18.188.159.187'
 gitlab_runner_registration_token: '<mandatory>'
 gitlab_runner_description: 'Example GitLab Runner'
 gitlab_runner_docker_volumes:
