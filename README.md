@@ -17,11 +17,11 @@ vim inventory/default.ini
 Then add your target hosts under the ```[masters]``` and ```[runners]``` section.
 
 ```
-ansible-playbook playbooks/0_local_requirements.yaml
+ansible-playbook playbooks/0_local_requirements.yaml -i inventory/default.ini
 ```
 Once you get there, you are sure you have all requirements to play with Ansible. Then, we will ensure your inventory is correct by trying to connect on all hosts. Obviously, this playbook will not modify at this stage your targets, it's just to be sure your inventory is ok.
 ```
-ansible-playbook playbooks/1_target_test.yml
+ansible-playbook playbooks/1_target_test.yml -i inventory/default.ini
 ```
 
 Download the roles: 
@@ -35,7 +35,7 @@ Configure the gitlab endpoint, in `playbooks/vars/gitlab_master.yml`
 
 Now you can install gitlab-ce
 ```
-ansible-playbook playbooks/4_target_master.yml
+ansible-playbook playbooks/4_target_master.yml -i inventory/default.ini
 ```
 
 Test the endpoint
@@ -46,7 +46,7 @@ Configure the runner with `gitlab_runner_coordinator_url` and `gitlab_runner_reg
 
 Now install the runner
 ```
-ansible-playbook playbooks/4_target_runner.yml
+ansible-playbook playbooks/5_gitlab_runner.yml -i inventory/default.ini
 ```
 
 You should now see your runner in gitlab UI
@@ -55,6 +55,8 @@ Limitations:
 - Please refer on documentation role for more configuration: 
   - https://github.com/geerlingguy/ansible-role-gitlab
   - https://github.com/riemers/ansible-gitlab-runner
+  - https://github.com/geerlingguy/ansible-role-docker
+
 
 
 
