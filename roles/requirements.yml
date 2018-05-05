@@ -1,9 +1,17 @@
 ---
 
+- src: geerlingguy.docker
+  name: docker
+
+- src: geerlingguy.pip
+  name: pip
+
 - src: geerlingguy.gitlab
   version: 2.5.0
   name: gitlab
 
 - src: riemers.gitlab-runner
   name: gitlab-runner
+
+
 
