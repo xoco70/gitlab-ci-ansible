@@ -2,7 +2,7 @@
 #
 # Install Gitlab and Gitlab Runner
 # TODO
-# - create user with gitlab_user
+# - create non root user with gitlab_user
 # - create project with gitlab_project
 # - get project token and pass it to runner
 
@@ -13,26 +13,3 @@
     - vars/gitlab_master.yml
   roles:
     - gitlab
-#  tasks:
-#    - name: Create Gitlab User
-#      gitlab_user:
-#        server_url: http://18.188.159.187/
-#        validate_certs: True
-#        login_user: root
-#        login_password: 12345678
-#        name: My Name
-#        username: root
-#        password: 12345678
-#        email: me@example.com
-#        sshkey_name: MySSH
-#        sshkey_file: ssh-rsa AAAAB3NzaC1yc...
-#        state: present
-
-- hosts: runners
-  user: ubuntu
-  become: yes
-  vars_files:
-    - vars/gitlab_runner.yml
-  roles:
-    - role: gitlab-runner
-
