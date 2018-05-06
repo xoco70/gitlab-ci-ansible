@@ -18,7 +18,3 @@
     - name: Run a command to get target release
       shell: cat /etc/*ease || sw_vers
       changed_when: false
-
-  roles:
-    - role: dumpall
-#      when: dump_vars | bool
