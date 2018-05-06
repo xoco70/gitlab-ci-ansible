@@ -51,7 +51,10 @@ ansible-playbook playbooks/5_gitlab_runner.yml -i inventory/default.ini
 
 You should now see your runner in gitlab UI
 
-Limitations: 
+Limitations:
+ - It would have been great to automate gitlab project creation, getting token, and inserting it in the second playbook 
+ so that you could only run the main playbook 999 instead of running 2. This is not a fully automated install :(
+
 - Please refer on documentation role for more configuration: 
   - https://github.com/geerlingguy/ansible-role-gitlab
   - https://github.com/riemers/ansible-gitlab-runner
