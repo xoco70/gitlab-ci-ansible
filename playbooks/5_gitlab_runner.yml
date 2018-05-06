@@ -9,4 +9,7 @@
     - role: gitlab-runner
   tasks:
     - name: Add gitlab-runner user to docker group
-      shell: usermod -aG docker gitlab-runner
+      user: name=gitlab-runner
+            group=docker
+            groups=sudo
+            append=yes
