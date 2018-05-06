@@ -24,25 +24,14 @@ Once you get there, you are sure you have all requirements to play with Ansible.
 ansible-playbook playbooks/1_target_test.yml -i inventory/default.ini
 ```
 
-Download the roles: 
-
-```
-ansible-galaxy install -r roles/requirements.yml
-```
-
-Configure the gitlab endpoint, in `playbooks/vars/gitlab_master.yml`
-
-
 Now you can install gitlab-ce
 ```
-ansible-playbook playbooks/4_target_master.yml -i inventory/default.ini
+ansible-playbook playbooks/999_main_playbook.yml -i inventory/default.ini
 ```
-
-Test the endpoint
  
 Create a repository, and get the project token in project > Settings > CI / CD 
 
-Configure the runner with `gitlab_runner_coordinator_url` and `gitlab_runner_registration_token` in `playbooks/vars/gitlab_runner.yml` 
+Configure the runner with `gitlab_runner_registration_token` in `playbooks/vars/gitlab_runner.yml` 
 
 Now install the runner
 ```
@@ -51,15 +40,12 @@ ansible-playbook playbooks/5_gitlab_runner.yml -i inventory/default.ini
 
 You should now see your runner in gitlab UI
 
-Limitations:
+Known limitations:
  - It would have been great to automate gitlab project creation, getting token, and inserting it in the second playbook 
  so that you could only run the main playbook 999 instead of running 2. This is not a fully automated install :(
+ - When you delete a runner in UI, it doesn't remove it in `/etc/gitlab-runner/config.toml` 
 
 - Please refer on documentation role for more configuration: 
   - https://github.com/geerlingguy/ansible-role-gitlab
   - https://github.com/riemers/ansible-gitlab-runner
   - https://github.com/geerlingguy/ansible-role-docker
-
-
-
-
