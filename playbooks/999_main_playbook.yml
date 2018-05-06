@@ -1,0 +1,4 @@
+---
+- import_playbook: 2_target_requirements.yml
+- import_playbook: 4_gitlab_master.yml
+- import_playbook: 5_gitlab_runner.yml
